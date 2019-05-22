@@ -7,8 +7,31 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-button color="primary" (click)="consulta()">Consulta datos</ion-button>
+
+  <ion-list >
+        <table>
+          <tr>
+            <th >Nombre</th><br>
+            <th>Cabello</th><br>
+            <th>Peso</th>
+          </tr>
+
+        <tr *ngFor="let i of datos">
+
+          <th (click)="ir(i.url)">{{i.name}}</th><br><br>
+
+          <th>{{i.hair_color}}</th><br><br>
+          <th>{{i.height}}</th><br><br>
+        </tr>
+
+          <!-- <tr *ngfor="let usuario of datos">
+            <th>{{ usuario.name}}</th><br><br>
+            <th>{{usuario.hair_color}}</th><br><br>
+            <th>{{usuario.height}}</th><br><br>
+          </tr> -->
+
+        </table>
+    </ion-list>
+
 </ion-content>
